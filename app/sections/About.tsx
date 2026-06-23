@@ -1,5 +1,6 @@
 const certs = [
   "Databricks Certified Data Engineer Associate",
+  "Microsoft Certified: Azure Data Engineer Associate",
   "The Complete SQL Bootcamp",
   "Introduction to Data Engineering",
   "INTRODUCTION TO MATLAB",

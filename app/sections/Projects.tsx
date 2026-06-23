@@ -29,6 +29,21 @@ const projects = [
     github: "https://github.com/keerthyp1999",
     color: "teal",
   },
+  {
+    featured: true,
+    title: "GoodNeighUBors — Buffalo Blizzard Needs Monitoring System",
+    description:
+      "Hackathon project: A full-stack community resilience platform combining 5+ years of historical blizzard and power outage data with live weather feeds to surface neighborhood-level vulnerability. Helps emergency planners identify at-risk zones before a storm hits, paired with a Next.js front-end delivering real-time alerts to residents most in need.",
+    impact: [
+      "Analyzed 5+ years of NOAA blizzard and utility outage records using Python and SQL to model compounded power outage risk by census tract",
+      "Built interactive Tableau dashboards pinpointing vulnerable communities — enabling faster identification of high-risk zones for 15,000+ residents",
+      "Designed optimized SQL analytical data models supporting exploratory analysis across large-scale regional weather and infrastructure datasets",
+      "Delivered real-time blizzard alerts and a community needs registry via a Next.js web application with seamless UX",
+    ],
+    tech: ["Tableau", "SQL", "Python", "Next.js", "Data Management"],
+    github: "https://opportunity.census.gov/showcase/?year=2023",
+    color: "teal",
+  },
 ];
 
 const colorMap: Record<string, { badge: string; glow: string; dot: string }> = {
