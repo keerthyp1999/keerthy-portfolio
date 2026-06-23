@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0A0E1A;
+  color: #B8C2D4;
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(59, 111, 255, 0.3);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0E1A;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A3349;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3B6FFF;
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #3B6FFF 0%, #00D9A3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-flow {
+    background: linear-gradient(90deg, #5B8BFF 0%, #3B6FFF 50%, #00D9A3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .border-glow {
+    box-shadow: 0 0 0 1px rgba(59, 111, 255, 0.3), 0 0 20px rgba(59, 111, 255, 0.05);
+  }
+
+  .card-hover {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(59, 111, 255, 0.4);
+  }
+
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(42, 51, 73, 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(42, 51, 73, 0.3) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .chip {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded text-xs font-mono font-medium;
+    background: rgba(59, 111, 255, 0.1);
+    color: #5B8BFF;
+    border: 1px solid rgba(59, 111, 255, 0.2);
+  }
+
+  .chip-signal {
+    background: rgba(0, 217, 163, 0.1);
+    color: #00D9A3;
+    border: 1px solid rgba(0, 217, 163, 0.2);
+  }
+
+  .section-label {
+    @apply font-mono text-xs tracking-widest uppercase;
+    color: #3B6FFF;
+  }
+}
