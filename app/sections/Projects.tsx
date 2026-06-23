@@ -29,19 +29,6 @@ const projects = [
     github: "https://github.com/keerthyp1999",
     color: "teal",
   },
-  {
-    featured: false,
-    title: "Multi-Tenant Warehouse Onboarding Framework",
-    description:
-      "Metadata-driven PostgreSQL framework enabling dynamic client provisioning, program configuration, and report activation without code changes — cutting cross-tenant dependency by over 90%.",
-    impact: [
-      "Client onboarding reduced from days to hours",
-      "Supports 15+ source systems with unified refresh under 2 minutes",
-    ],
-    tech: ["PostgreSQL", "AWS Redshift", "Python", "SQL"],
-    github: "https://github.com/keerthyp1999",
-    color: "purple",
-  },
 ];
 
 const colorMap: Record<string, { badge: string; glow: string; dot: string }> = {
