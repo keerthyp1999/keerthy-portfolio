@@ -90,6 +90,7 @@ export default function Hero() {
           {/* Main heading */}
           <h1 className="font-display text-5xl md:text-7xl font-bold leading-none mb-6 tracking-tight">
             <span className="text-white block">Keerthy</span>
+            <span className="text-white block">Priya</span>
             <span className="text-white block">Vanam</span>
           </h1>
 
@@ -119,7 +120,7 @@ export default function Hero() {
               Get in Touch
             </a>
             <a
-              href="https://www.linkedin.com/in/keerthy-priyavanam"
+              href="https://www.linkedin.com/in/keerthy-priya-vanam"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded border border-wire text-ash font-medium text-sm hover:border-signal hover:text-signal transition-all duration-200 flex items-center gap-2"
