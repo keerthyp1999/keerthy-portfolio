@@ -3,68 +3,71 @@ import { useState } from "react";
 
 const jobs = [
   {
-    id: "cognizant",
+    id: "stem",
     title: "Data Engineer",
-    company: "Stem Solutions (Client: Cognizant)",
+    company: "Stem Solutions LLC",
+    client: "Client: Verra Mobility, via Cognizant",
     period: "Apr 2024 – Present",
-    location: "Remote, USA",
+    location: "Remote, US",
     current: true,
     highlights: [
-      "Designed a multi-tenant AWS Redshift warehouse integrating 15+ source systems, achieving sub-2-minute refresh times via query optimization, partitioning, and incremental loading.",
-      "Built a metadata-driven PostgreSQL onboarding framework that cut cross-tenant dependency by 90%+, compressing client onboarding from days to hours.",
-      "Engineered AWS Glue (PySpark) ETL pipelines for complex nested JSON at scale, increasing ingestion throughput by 6× while improving fault tolerance.",
-      "Implemented an enterprise data quality and governance layer that reduced defect rates and reprocessing effort by 25%, directly improving reliability of business-critical reporting.",
-      "Deployed end-to-end structured logging and alerting, cutting mean time-to-resolution by 480 minutes across production pipelines.",
-      "Developed REST APIs with optimized pagination, reducing client application response latency by 200ms.",
-      "Automated CI/CD pipelines, Docker deployments, schema migrations, and CloudFormation infrastructure provisioning.",
-      "Implemented zero-trust cloud security via IAM, VPC Endpoints, and AWS KMS encryption without compromising performance SLAs.",
+      "Architected a multi-tenant PostgreSQL warehouse that grew from 1 to 5–6 clients on reusable data models, normalized schemas, and SQL functions for client-specific analytics.",
+      "Built metadata-driven AWS Glue and PySpark pipelines so new clients onboard in 3–4 weeks through reusable configuration, processing millions of records twice daily.",
+      "Delivered 20+ automated CSV report types per client with Glue, Lambda, and S3, giving clients self-service, on-demand reports with parameterized date filters.",
+      "Cut SQL-based API response time from 350 ms to 150 ms using composite indexing, partitioning, and execution-plan analysis.",
+      "Automated validation, reconciliation, and monitoring across ETL workflows, holding client-facing reports at 99.9% accuracy and reducing manual pipeline checks.",
+      "Moved schema management from Hasura to Atlas, standardizing version-controlled migrations and contributing to roughly $50K in cost savings.",
+      "Introduced AI-assisted SDLC workflows with Claude, MCP, VS Code, and Azure DevOps to speed up code generation, validation, and pull request preparation.",
     ],
-    tags: ["AWS Glue", "Redshift", "PySpark", "PostgreSQL", "CloudFormation", "KMS", "CI/CD", "Docker"],
+    tags: ["AWS Glue", "PySpark", "PostgreSQL", "Lambda", "S3", "Atlas", "Azure DevOps", "MCP"],
   },
   {
-    id: "doe",
-    title: "Data Analyst",
-    company: "Department of Energy",
-    period: "Aug 2023 – Jan 2024",
+    id: "tev",
+    title: "Project Intern",
+    company: "Third Estate Ventures",
+    client: "",
+    period: "Feb 2024 – Apr 2024",
     location: "Buffalo, NY",
     current: false,
     highlights: [
-      "Built analytical models over 5+ years of weather and infrastructure data using SQL and Tableau.",
-      "Identified high-risk infrastructure zones that informed preparedness initiatives for 15,000+ residents.",
+      "Analyzed demographic and household-income data in SQL to surface socioeconomic trends.",
+      "Built interactive Power BI dashboards that supported affordable housing and community development planning.",
     ],
-    tags: ["SQL", "Tableau", "Risk Modeling"],
+    tags: ["SQL", "Power BI"],
   },
   {
-    id: "lt",
-    title: "Data Engineer",
-    company: "Larsen & Toubro Group",
-    period: "Sept 2020 – July 2022",
-    location: "Bangalore, India",
+    id: "lt-de",
+    title: "Azure Data Engineer",
+    company: "L&T Technology Services",
+    client: "",
+    period: "May 2021 – Jun 2022",
+    location: "India",
     current: false,
     highlights: [
-      "Designed and operated scalable ETL pipelines using Azure Data Factory and Databricks, processing 500+ daily operational records within SLA windows.",
-      "Built analytics-ready warehouse tables in ADLS Gen2 supporting SQL-based reporting across business units.",
-      "Introduced Git-based branching workflows that reduced deployment errors by 40%+ and improved release turnaround by 30%.",
-      "Delivered a PySpark and Delta Lake data quality framework that cut incorrect Power BI analytical output by ~30%.",
+      "Built Azure Data Factory and Databricks pipelines in PySpark, SQL, and Delta Lake, automating 10+ transformations for daily operations with 100% on-time SLA execution.",
+      "Published analytics-ready Delta Lake datasets on ADLS Gen2 for Power BI, helping business teams reach insights 5× faster.",
+      "Added automated data quality and schema validation checks that reduced inaccurate analytical outputs by 30%.",
+      "Tuned Git-based CI/CD workflows across environments, cutting deployment errors by 40%+ and release turnaround by 30%.",
     ],
-    tags: ["Azure ADF", "Databricks", "PySpark", "Delta Lake", "ADLS Gen2", "Power BI"],
+    tags: ["Azure Data Factory", "Databricks", "Delta Lake", "ADLS Gen2", "Power BI"],
   },
   {
-    id: "dae",
-    title: "Data & Process Optimization Intern",
-    company: "Department of Atomic Energy",
-    period: "Apr 2018 – Aug 2018",
-    location: "Hyderabad, India",
+    id: "lt-gt",
+    title: "Graduate Engineer Trainee",
+    company: "L&T Technology Services",
+    client: "",
+    period: "Jul 2020 – Apr 2021",
+    location: "India",
     current: false,
     highlights: [
-      "Developed data processing workflows and KPI identification models using Excel, MATLAB, and R for process optimization.",
+      "Developed predictive maintenance models for a hydraulic-unit digital twin from operational data, reducing equipment downtime by 8 hours per day and generating $1M in cost savings.",
     ],
-    tags: ["MATLAB", "R", "Excel"],
+    tags: ["Predictive modeling", "Digital twin"],
   },
 ];
 
 export default function Experience() {
-  const [active, setActive] = useState("cognizant");
+  const [active, setActive] = useState("stem");
   const job = jobs.find((j) => j.id === active)!;
 
   return (
@@ -76,13 +79,12 @@ export default function Experience() {
         </h2>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {/* Tab list */}
-          <div className="flex md:flex-col gap-2">
+          <div className="flex md:flex-col gap-2 overflow-x-auto md:overflow-visible">
             {jobs.map((j) => (
               <button
                 key={j.id}
                 onClick={() => setActive(j.id)}
-                className={`text-left px-4 py-3 rounded-lg border transition-all duration-200 text-sm ${
+                className={`text-left px-4 py-3 rounded-lg border transition-all duration-200 text-sm whitespace-nowrap md:whitespace-normal ${
                   active === j.id
                     ? "border-flow bg-flow/10 text-ash-light"
                     : "border-transparent text-ash hover:border-wire hover:text-ash-light"
@@ -94,12 +96,12 @@ export default function Experience() {
             ))}
           </div>
 
-          {/* Detail panel */}
           <div className="md:col-span-2 p-6 rounded-xl border border-wire bg-surface-raised">
             <div className="flex flex-wrap items-start justify-between gap-2 mb-6">
               <div>
                 <h3 className="font-display text-xl font-bold text-white">{job.title}</h3>
                 <p className="text-ash text-sm mt-0.5">{job.company} · {job.location}</p>
+                {job.client && <p className="font-mono text-xs text-ash mt-1">{job.client}</p>}
               </div>
               <div className="flex items-center gap-2">
                 {job.current && (

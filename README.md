@@ -1,66 +1,42 @@
-# keerthy-priya-vanam-portfolio
+# keerthy-vanam-portfolio
 
-Personal portfolio website for **Keerthy Priya Vanam** — Cloud Data Engineer specializing in AWS/Azure pipelines, distributed systems, and high-throughput ETL.
+Personal portfolio for **Keerthy Priya Vanam**, a data engineer working on multi-tenant pipelines with AWS Glue, PySpark, PostgreSQL, and Databricks.
 
-## Tech Stack
+## Tech stack
 
-- **Next.js 14** (App Router)
-- **TypeScript**
-- **Tailwind CSS**
-- **Fully responsive** — mobile-first design
-- **Dark mode** by default
-- **Zero external dependencies** beyond Next.js & Tailwind
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Dark theme, fully responsive, reduced-motion aware
 
-## Design Direction
+## Design
 
-- Deep navy/ink palette (`#0A0E1A`) with electric blue (`#3B6FFF`) and teal signal (`#00D9A3`) accents
-- `Syne` display typeface (bold, architectural), `Inter` for body, `JetBrains Mono` for code/labels
-- Animated node-graph canvas in the hero — reflects the data pipeline / graph topology domain
-- Signature element: live particle graph that echoes a DAG (directed acyclic graph), the mental model of every data pipeline
+- Ink navy base with electric blue and teal accents
+- Syne for headings, Inter for body text, JetBrains Mono for labels and tags
+- Hero background is a slow-moving node graph, a nod to the DAGs behind every pipeline
 
-## Sections
+## Structure
 
-| Section | Description |
-|---|---|
-| Hero | Tagline, key stats, animated node graph |
-| About | Narrative, core tech stack, certifications, education |
-| Experience | Tabbed job history with impact bullets |
-| Projects | Featured projects with outcomes and tech tags |
-| Skills | Grouped skill bars across 6 categories |
-| Contact | Direct links to email, phone, LinkedIn, GitHub |
+```
+app/
+  components/   Navbar, Footer
+  sections/     Hero, About, Experience, Projects, Skills, Contact
+  globals.css   Fonts and shared utility classes
+  layout.tsx    Root layout and metadata
+  page.tsx      Page composition
+```
 
-## Local Setup
+## Local setup
 
 ```bash
-# 1. Clone the repo
-git clone https://github.com/your-username/keerthy-priya-vanam-portfolio.git
-cd keerthy-priya-vanam-portfolio
-
-# 2. Install dependencies
+git clone <your-repo-url>
+cd keerthy-vanam-portfolio
 npm install
-
-# 3. Start development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open http://localhost:3000.
 
-## Build for Production
+## Updating content
 
-```bash
-npm run build
-npm start
-```
-
-## Customization
-
-All content lives in the section files under `app/sections/`. Each file is self-contained and easy to update:
-
-- `Hero.tsx` — stats, tagline, CTAs
-- `About.tsx` — narrative, stack, certs, education
-- `Experience.tsx` — job history array
-- `Projects.tsx` — projects array
-- `Skills.tsx` — skill groups with proficiency levels
-- `Contact.tsx` — contact links
-
-Colors and typography tokens are defined in `tailwind.config.ts` and `app/globals.css`.
+Each section file keeps its content in a plain array at the top, so edits to experience, projects, or skills do not touch layout code.

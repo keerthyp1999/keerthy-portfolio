@@ -3,7 +3,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Keerthy Priya Vanam · Data Engineer",
-  description: "Cloud-native data engineer specializing in AWS/Azure pipelines, distributed systems, and high-throughput ETL at enterprise scale.",
+  description:
+    "Data engineer building metadata-driven, multi-tenant pipelines on AWS Glue, PySpark, PostgreSQL, and Databricks.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
