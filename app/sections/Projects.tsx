@@ -12,6 +12,7 @@ const projects = [
     ],
     tech: ["Kafka", "Databricks", "Delta Lake", "Airflow", "Terraform"],
     accent: "bg-flow",
+    github: "https://github.com/keerthyp1999/real-time-customer-analytics-platform",
   },
   {
     title: "Spark Performance Lab",
@@ -26,6 +27,7 @@ const projects = [
     ],
     tech: ["PySpark", "AWS Glue", "Spark UI"],
     accent: "bg-signal",
+    github: "https://github.com/keerthyp1999/spark-performance-architecture-lab",
   },
   {
     title: "Weather-Risk Analytics Hackathon",
@@ -38,6 +40,7 @@ const projects = [
     ],
     tech: ["SQL", "Tableau", "Data analysis"],
     accent: "bg-purple-400",
+    github: "",
   },
 ];
 
@@ -50,7 +53,7 @@ export default function Projects() {
           Pipelines built from scratch.
         </h2>
         <p className="text-ash mb-12 max-w-lg">
-          Personal projects where I test architecture choices end to end. Code is on GitHub.
+          Personal projects where I test architecture choices end to end. Two are open source on GitHub.
         </p>
 
         <div className="space-y-6">
@@ -77,17 +80,19 @@ export default function Projects() {
                 ))}
               </div>
 
-              <a
-                href="https://github.com/keerthyp1999"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm text-ash hover:text-ash-light transition-colors"
-              >
-                View on GitHub
-                <svg className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
+              {p.github && (
+                <a
+                  href={p.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-ash hover:text-ash-light transition-colors"
+                >
+                  View on GitHub
+                  <svg className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </a>
+              )}
             </div>
           ))}
         </div>
