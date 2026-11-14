@@ -106,7 +106,7 @@ a:focus-visible, button:focus-visible {
     border: 1px solid rgba(59, 111, 255, 0.2);
   }
   .section-label {
-    @apply font-mono text-sm font-bold tracking-widest uppercase;
+    @apply font-mono text-xs tracking-widest uppercase;
     color: #3B6FFF;
   }
 }
@@ -124,39 +124,3 @@ a:focus-visible, button:focus-visible {
 .orb-a { animation: float-slow 18s ease-in-out infinite; }
 .orb-b { animation: float-slower 24s ease-in-out infinite; }
 
-
-/* ---------- 3D motion ---------- */
-[data-tilt] {
-  position: relative;
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-[data-tilt]::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.16), transparent 45%);
-}
-[data-tilt].is-tilting::after { opacity: 1; }
-
-.reveal-init {
-  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.25s ease, border-color 0.25s ease;
-}
-.reveal-init:not(.is-visible) {
-  opacity: 0;
-  transform: perspective(1000px) translateY(36px) rotateX(10deg) scale(0.97);
-}
-.reveal-init.is-visible {
-  opacity: 1;
-  transform: none;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-.animate-float { animation: float 6s ease-in-out infinite; }

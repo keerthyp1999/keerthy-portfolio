@@ -59,7 +59,7 @@ export default function Projects() {
     <section id="projects" className="py-24 border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6">
         <p className="section-label mb-4">Projects</p>
-        <h2 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4 leading-tight">
+        <h2 className="font-display text-4xl font-bold text-white mb-4 leading-tight">
           Pipelines built from scratch.
         </h2>
         <p className="text-ash mb-12 max-w-lg">
@@ -72,7 +72,7 @@ export default function Projects() {
               <span className="absolute top-5 right-5 text-xs font-mono px-2 py-0.5 rounded border border-white/15 text-ash">
                 {p.tag}
               </span>
-              <h3 className="font-display text-2xl font-extrabold text-white mb-2 pr-32">{p.title}</h3>
+              <h3 className="font-display text-xl font-bold text-white mb-2 pr-32">{p.title}</h3>
               <p className="text-ash text-sm leading-relaxed mb-5">{p.description}</p>
 
               <div className="mb-5 space-y-2">

@@ -87,13 +87,12 @@ export default function Hero() {
 
           <div className="flex flex-col-reverse sm:flex-row sm:items-center gap-6 sm:gap-8 mb-6">
             <h1
-              className="font-display font-extrabold leading-tight tracking-tight text-white whitespace-nowrap"
+              className="font-display font-bold leading-tight tracking-tight text-white whitespace-nowrap"
               style={{ fontSize: "clamp(1.5rem, 4.6vw, 3rem)" }}
             >
               Keerthy Priya Vanam
             </h1>
-            <div className="shrink-0 animate-float">
-            <div data-tilt data-tilt-max="14" className="relative rounded-full w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 group">
+            <div className="relative shrink-0 w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 group">
               <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-flow to-signal opacity-60 blur-md group-hover:opacity-90 transition-opacity duration-300" />
               <Image
                 src="/headshot.jpg"
@@ -104,10 +103,9 @@ export default function Hero() {
                 className="relative w-full h-full rounded-full object-cover object-[50%_20%] border-2 border-wire"
               />
             </div>
-            </div>
           </div>
 
-          <p className="font-display text-2xl md:text-3xl font-bold mb-4">
+          <p className="font-display text-xl md:text-2xl font-semibold mb-4">
             <span className="text-gradient">One pipeline design. Every new client.</span>
           </p>
 
@@ -136,8 +134,8 @@ export default function Hero() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((s) => (
-              <div key={s.label} className="p-4 rounded-lg glass card-hover">
-                <div className="font-display text-xl sm:text-2xl font-extrabold text-gradient mb-1">{s.value}</div>
+              <div key={s.label} className="p-4 rounded-lg glass">
+                <div className="font-display text-xl font-bold text-gradient mb-1">{s.value}</div>
                 <div className="font-mono text-xs text-ash leading-tight">{s.label}</div>
               </div>
             ))}

@@ -29,7 +29,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-16 items-start">
           <div>
             <p className="section-label mb-4">About</p>
-            <h2 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+            <h2 className="font-display text-4xl font-bold text-white mb-6 leading-tight">
               Hand me the problem. I&apos;ll see it through.
             </h2>
             <p className="text-ash leading-relaxed mb-4">
@@ -52,7 +52,7 @@ export default function About() {
             <div className="grid sm:grid-cols-3 gap-3">
               {traits.map((t) => (
                 <div key={t.title} className="p-4 rounded-xl glass card-hover">
-                  <p className="font-display text-base font-extrabold text-white mb-1.5">{t.title}</p>
+                  <p className="font-display text-sm font-bold text-white mb-1.5">{t.title}</p>
                   <p className="text-xs text-ash leading-relaxed">{t.proof}</p>
                 </div>
               ))}
