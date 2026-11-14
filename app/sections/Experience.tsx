@@ -1,7 +1,19 @@
 "use client";
 import { useState } from "react";
 
-const jobs = [
+type Point = { lead: string; text: string };
+
+const jobs: {
+  id: string;
+  title: string;
+  company: string;
+  client: string;
+  period: string;
+  location: string;
+  current: boolean;
+  highlights: Point[];
+  tags: string[];
+}[] = [
   {
     id: "stem",
     title: "Data Engineer",
@@ -11,13 +23,34 @@ const jobs = [
     location: "Remote, US",
     current: true,
     highlights: [
-      "Architected a multi-tenant PostgreSQL warehouse that grew from 1 to 5–6 clients on reusable data models, normalized schemas, and SQL functions for client-specific analytics.",
-      "Built metadata-driven AWS Glue and PySpark pipelines so new clients onboard in 3–4 weeks through reusable configuration, processing millions of records twice daily.",
-      "Delivered 20+ automated CSV report types per client with Glue, Lambda, and S3, giving clients self-service, on-demand reports with parameterized date filters.",
-      "Cut SQL-based API response time from 350 ms to 150 ms using composite indexing, partitioning, and execution-plan analysis.",
-      "Automated validation, reconciliation, and monitoring across ETL workflows, holding client-facing reports at 99.9% accuracy and reducing manual pipeline checks.",
-      "Moved schema management from Hasura to Atlas, standardizing version-controlled migrations and contributing to roughly $50K in cost savings.",
-      "Introduced AI-assisted SDLC workflows with Claude, MCP, VS Code, and Azure DevOps to speed up code generation, validation, and pull request preparation.",
+      {
+        lead: "One warehouse, many clients.",
+        text: "Designed the PostgreSQL warehouse so every new client reuses the same models, normalized schemas, and SQL functions. It has grown from one client to five or six on that shared design.",
+      },
+      {
+        lead: "Onboarding by configuration.",
+        text: "Wrote Glue and PySpark pipelines that take their instructions from metadata. A new client now means 3–4 weeks of setup instead of new pipeline code, while millions of records still flow through twice a day.",
+      },
+      {
+        lead: "Reports on demand.",
+        text: "Built 20+ CSV report types per client on Glue, Lambda, and S3. Clients choose a date range and pull what they need, with no ticket to the data team.",
+      },
+      {
+        lead: "Faster APIs.",
+        text: "Read the execution plans, found the slow paths, and fixed them with composite indexes and partitioning. SQL-backed API calls fell from 350 ms to 150 ms.",
+      },
+      {
+        lead: "Numbers people can trust.",
+        text: "Validation, reconciliation, and monitoring run inside the ETL workflows, which holds client-facing reports at 99.9% accuracy and removes most manual checking.",
+      },
+      {
+        lead: "A cleaner migration path.",
+        text: "Moved schema management from Hasura to Atlas, so every database change is version-controlled and reviewable. It was part of roughly $50K in savings.",
+      },
+      {
+        lead: "AI in the daily loop.",
+        text: "Use Claude, MCP, VS Code, and Azure DevOps to draft code, check it, and prepare pull requests faster.",
+      },
     ],
     tags: ["AWS Glue", "PySpark", "PostgreSQL", "Lambda", "S3", "Atlas", "Azure DevOps", "MCP"],
   },
@@ -30,8 +63,14 @@ const jobs = [
     location: "Buffalo, NY",
     current: false,
     highlights: [
-      "Analyzed demographic and household-income data in SQL to surface socioeconomic trends.",
-      "Built interactive Power BI dashboards that supported affordable housing and community development planning.",
+      {
+        lead: "Income data, explained.",
+        text: "Dug into demographic and household-income datasets with SQL to find the socioeconomic patterns behind community needs.",
+      },
+      {
+        lead: "Dashboards for planners.",
+        text: "Turned those findings into interactive Power BI dashboards that supported affordable housing and community development planning.",
+      },
     ],
     tags: ["SQL", "Power BI"],
   },
@@ -44,10 +83,22 @@ const jobs = [
     location: "India",
     current: false,
     highlights: [
-      "Built Azure Data Factory and Databricks pipelines in PySpark, SQL, and Delta Lake, automating 10+ transformations for daily operations with 100% on-time SLA execution.",
-      "Published analytics-ready Delta Lake datasets on ADLS Gen2 for Power BI, helping business teams reach insights 5× faster.",
-      "Added automated data quality and schema validation checks that reduced inaccurate analytical outputs by 30%.",
-      "Tuned Git-based CI/CD workflows across environments, cutting deployment errors by 40%+ and release turnaround by 30%.",
+      {
+        lead: "Daily runs that never missed.",
+        text: "Automated 10+ transformations across Azure Data Factory and Databricks (PySpark, SQL, Delta Lake) and met the SLA on time, every run.",
+      },
+      {
+        lead: "Answers 5× sooner.",
+        text: "Published analytics-ready Delta Lake datasets on ADLS Gen2 for Power BI, so business teams got their insights five times faster.",
+      },
+      {
+        lead: "Bad data, caught early.",
+        text: "Added schema and quality checks that cut inaccurate analytical output by 30%.",
+      },
+      {
+        lead: "Safer releases.",
+        text: "Streamlined the Git-based CI/CD flow across environments: 40%+ fewer deployment errors and releases out 30% faster.",
+      },
     ],
     tags: ["Azure Data Factory", "Databricks", "Delta Lake", "ADLS Gen2", "Power BI"],
   },
@@ -60,7 +111,10 @@ const jobs = [
     location: "India",
     current: false,
     highlights: [
-      "Developed predictive maintenance models for a hydraulic-unit digital twin from operational data, reducing equipment downtime by 8 hours per day and generating $1M in cost savings.",
+      {
+        lead: "Fixing machines before they fail.",
+        text: "Built predictive maintenance models on a hydraulic unit's digital twin. Equipment downtime dropped by 8 hours a day, worth $1M in savings.",
+      },
     ],
     tags: ["Predictive modeling", "Digital twin"],
   },
@@ -114,11 +168,13 @@ export default function Experience() {
               </div>
             </div>
 
-            <ul className="space-y-3 mb-6">
-              {job.highlights.map((h, i) => (
-                <li key={i} className="flex items-start gap-3 text-sm text-ash leading-relaxed">
+            <ul className="space-y-4 mb-6">
+              {job.highlights.map((h) => (
+                <li key={h.lead} className="flex items-start gap-3 text-sm text-ash leading-relaxed">
                   <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-flow flex-shrink-0" />
-                  {h}
+                  <span>
+                    <strong className="text-white font-semibold">{h.lead}</strong> {h.text}
+                  </span>
                 </li>
               ))}
             </ul>

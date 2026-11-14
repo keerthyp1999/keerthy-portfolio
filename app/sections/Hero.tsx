@@ -79,16 +79,18 @@ export default function Hero() {
       </div>
 
       <div className="relative max-w-6xl mx-auto px-6 pt-28 pb-20">
-        <div className="max-w-4xl">
+        <div className="max-w-5xl">
           <div className="inline-flex items-center gap-2 mb-8 px-3 py-1.5 rounded-full glass">
             <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse-slow" />
             <span className="font-mono text-xs text-ash">Data Engineer · AWS · PySpark · PostgreSQL</span>
           </div>
 
           <div className="flex flex-col-reverse sm:flex-row sm:items-center gap-6 sm:gap-8 mb-6">
-            <h1 className="font-display text-5xl md:text-7xl font-bold leading-none tracking-tight">
-              <span className="text-white block">Keerthy Priya</span>
-              <span className="text-white block">Vanam</span>
+            <h1
+              className="font-display font-bold leading-tight tracking-tight text-white whitespace-nowrap"
+              style={{ fontSize: "clamp(1.5rem, 4.6vw, 3rem)" }}
+            >
+              Keerthy Priya Vanam
             </h1>
             <div className="relative shrink-0 w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 group">
               <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-flow to-signal opacity-60 blur-md group-hover:opacity-90 transition-opacity duration-300" />
