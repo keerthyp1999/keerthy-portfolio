@@ -2,6 +2,7 @@ import Background from "./components/Background";
 import GlassBackground from "./components/GlassBackground";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Motion3D from "./components/Motion3D";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Experience from "./sections/Experience";
@@ -23,6 +24,7 @@ export default function Home() {
       <Contact />
       <Footer />
       </main>
+      <Motion3D />
     </>
   );
 }

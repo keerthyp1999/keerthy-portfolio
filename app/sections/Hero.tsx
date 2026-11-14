@@ -92,7 +92,8 @@ export default function Hero() {
             >
               Keerthy Priya Vanam
             </h1>
-            <div className="relative shrink-0 w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 group">
+            <div className="shrink-0 animate-float">
+            <div data-tilt data-tilt-max="14" className="relative rounded-full w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 group">
               <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-flow to-signal opacity-60 blur-md group-hover:opacity-90 transition-opacity duration-300" />
               <Image
                 src="/headshot.jpg"
@@ -102,6 +103,7 @@ export default function Hero() {
                 priority
                 className="relative w-full h-full rounded-full object-cover object-[50%_20%] border-2 border-wire"
               />
+            </div>
             </div>
           </div>
 
@@ -134,7 +136,7 @@ export default function Hero() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((s) => (
-              <div key={s.label} className="p-4 rounded-lg glass">
+              <div key={s.label} className="p-4 rounded-lg glass card-hover">
                 <div className="font-display text-xl sm:text-2xl font-extrabold text-gradient mb-1">{s.value}</div>
                 <div className="font-mono text-xs text-ash leading-tight">{s.label}</div>
               </div>
