@@ -87,7 +87,7 @@ export default function Hero() {
 
           <div className="flex flex-col-reverse sm:flex-row sm:items-center gap-6 sm:gap-8 mb-6">
             <h1
-              className="font-display font-bold leading-tight tracking-tight text-white whitespace-nowrap"
+              className="font-display font-extrabold leading-tight tracking-tight text-white whitespace-nowrap"
               style={{ fontSize: "clamp(1.5rem, 4.6vw, 3rem)" }}
             >
               Keerthy Priya Vanam
@@ -105,7 +105,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <p className="font-display text-xl md:text-2xl font-semibold mb-4">
+          <p className="font-display text-2xl md:text-3xl font-bold mb-4">
             <span className="text-gradient">One pipeline design. Every new client.</span>
           </p>
 
@@ -135,7 +135,7 @@ export default function Hero() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((s) => (
               <div key={s.label} className="p-4 rounded-lg glass">
-                <div className="font-display text-xl font-bold text-gradient mb-1">{s.value}</div>
+                <div className="font-display text-xl sm:text-2xl font-extrabold text-gradient mb-1">{s.value}</div>
                 <div className="font-mono text-xs text-ash leading-tight">{s.label}</div>
               </div>
             ))}

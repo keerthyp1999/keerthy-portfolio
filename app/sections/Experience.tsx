@@ -128,7 +128,7 @@ export default function Experience() {
     <section id="experience" className="py-24 border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6">
         <p className="section-label mb-4">Experience</p>
-        <h2 className="font-display text-4xl font-bold text-white mb-12 leading-tight">
+        <h2 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-12 leading-tight">
           Where the pipelines ran.
         </h2>
 
@@ -153,7 +153,7 @@ export default function Experience() {
           <div className="md:col-span-2 p-6 rounded-xl glass">
             <div className="flex flex-wrap items-start justify-between gap-2 mb-6">
               <div>
-                <h3 className="font-display text-xl font-bold text-white">{job.title}</h3>
+                <h3 className="font-display text-2xl font-extrabold text-white">{job.title}</h3>
                 <p className="text-ash text-sm mt-0.5">{job.company} · {job.location}</p>
                 {job.client && <p className="font-mono text-xs text-ash mt-1">{job.client}</p>}
               </div>

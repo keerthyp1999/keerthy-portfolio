@@ -17,14 +17,14 @@ export default function Skills() {
     <section id="skills" className="py-24 border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6">
         <p className="section-label mb-4">Technical skills</p>
-        <h2 className="font-display text-4xl font-bold text-white mb-12 leading-tight">
+        <h2 className="font-display text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-12 leading-tight">
           The toolbox behind the pipelines.
         </h2>
 
         <div className="grid md:grid-cols-2 gap-5">
           {groups.map((g) => (
             <div key={g.category} className="p-5 rounded-xl glass card-hover">
-              <p className="font-mono text-xs text-ash-light tracking-wide uppercase font-medium mb-4">
+              <p className="font-mono text-sm text-white tracking-wide uppercase font-bold mb-4">
                 {g.category}
               </p>
               <div className="flex flex-wrap gap-2">
