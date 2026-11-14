@@ -80,7 +80,7 @@ export default function Hero() {
 
       <div className="relative max-w-6xl mx-auto px-6 pt-28 pb-20">
         <div className="max-w-4xl">
-          <div className="inline-flex items-center gap-2 mb-8 px-3 py-1.5 rounded-full border border-wire bg-surface-raised">
+          <div className="inline-flex items-center gap-2 mb-8 px-3 py-1.5 rounded-full glass">
             <span className="w-1.5 h-1.5 rounded-full bg-signal animate-pulse-slow" />
             <span className="font-mono text-xs text-ash">Data Engineer · AWS · PySpark · PostgreSQL</span>
           </div>
@@ -132,7 +132,7 @@ export default function Hero() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((s) => (
-              <div key={s.label} className="p-4 rounded-lg border border-wire bg-surface-raised/50">
+              <div key={s.label} className="p-4 rounded-lg glass">
                 <div className="font-display text-xl font-bold text-gradient mb-1">{s.value}</div>
                 <div className="font-mono text-xs text-ash leading-tight">{s.label}</div>
               </div>

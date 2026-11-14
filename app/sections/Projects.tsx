@@ -46,7 +46,7 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 border-t border-wire">
+    <section id="projects" className="py-24 border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6">
         <p className="section-label mb-4">Projects</p>
         <h2 className="font-display text-4xl font-bold text-white mb-4 leading-tight">
@@ -58,7 +58,7 @@ export default function Projects() {
 
         <div className="space-y-6">
           {projects.map((p) => (
-            <div key={p.title} className="group relative p-6 rounded-xl border border-wire bg-surface-raised card-hover">
+            <div key={p.title} className="group relative p-6 rounded-xl glass card-hover">
               <span className="absolute top-5 right-5 text-xs font-mono px-2 py-0.5 rounded border border-wire text-ash">
                 {p.tag}
               </span>

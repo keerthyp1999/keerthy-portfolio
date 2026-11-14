@@ -71,7 +71,7 @@ export default function Experience() {
   const job = jobs.find((j) => j.id === active)!;
 
   return (
-    <section id="experience" className="py-24 border-t border-wire">
+    <section id="experience" className="py-24 border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6">
         <p className="section-label mb-4">Experience</p>
         <h2 className="font-display text-4xl font-bold text-white mb-12 leading-tight">
@@ -96,7 +96,7 @@ export default function Experience() {
             ))}
           </div>
 
-          <div className="md:col-span-2 p-6 rounded-xl border border-wire bg-surface-raised">
+          <div className="md:col-span-2 p-6 rounded-xl glass">
             <div className="flex flex-wrap items-start justify-between gap-2 mb-6">
               <div>
                 <h3 className="font-display text-xl font-bold text-white">{job.title}</h3>

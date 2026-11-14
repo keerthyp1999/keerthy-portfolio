@@ -7,7 +7,7 @@ const links = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 border-t border-wire">
+    <section id="contact" className="py-24 border-t border-white/10">
       <div className="max-w-6xl mx-auto px-6">
         <p className="section-label mb-4">Contact</p>
         <h2 className="font-display text-4xl font-bold text-white mb-4 leading-tight">
@@ -27,7 +27,7 @@ export default function Contact() {
                 href={l.href}
                 target={external ? "_blank" : undefined}
                 rel={external ? "noopener noreferrer" : undefined}
-                className="p-5 rounded-xl border border-wire bg-surface-raised card-hover group"
+                className="p-5 rounded-xl glass card-hover group"
               >
                 <p className="font-mono text-xs text-flow mb-1">{l.label}</p>
                 <p className="text-ash-light text-sm font-medium group-hover:text-white transition-colors break-all">

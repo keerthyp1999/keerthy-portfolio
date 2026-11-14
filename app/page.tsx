@@ -1,3 +1,5 @@
+import Background from "./components/Background";
+import GlassBackground from "./components/GlassBackground";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hero from "./sections/Hero";
@@ -9,7 +11,9 @@ import Contact from "./sections/Contact";
 
 export default function Home() {
   return (
-    <main className="bg-ink min-h-screen">
+    <>
+      <Background />
+      <main className="relative z-10 min-h-screen">
       <Navbar />
       <Hero />
       <About />
@@ -18,6 +22,7 @@ export default function Home() {
       <Skills />
       <Contact />
       <Footer />
-    </main>
+      </main>
+    </>
   );
 }
